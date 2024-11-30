@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fontawsome/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <title>Bookmarker</title>
+  </head>
+  <body >
+    <div class="container my-5 mx-auto text-center p-3">
+      <i class="fa fa-moon fs-1 position-absolute top-0 end-0 mt-4 me-5" onclick="nightMood()" id="nightMood"></i>
+      <h1 class="pacifico-regular">Bookmarker</h1>
+
+      <div
+        class="pt-5 pb-4 px-4 border-dotted border-end-0 border-start-0 mt-5"
+      >
+        <p class="righteous-regular fs-3">
+          <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </p>
+
+        <div class="text-start">
+          <div class="my-4">
+            <label for="siteName" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label
+            >
+            <input
+              type="text"
+              id="siteName"
+              class="form-control"
+              placeholder="Bookmark Name"
+              oninput="validationSiteName()"
+            />
+          </div>
+
+          <div class="my-4">
+            <label for="siteUrl" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-link pe-2"></i>Site URL</label
+            >
+            <input
+              type="text"
+              id="siteUrl"
+              class="form-control"
+              placeholder="Website URL"
+              oninput="validationSiteurl()"
+            />
+          </div>
+        </div>
+        <button class="btn btn-danger px-5 text-center" onclick="getData()">
+          Submit
+        </button>
+      </div>
+      <div class="mt-4">
+        <div class="my-4 d-flex w-50 mx-auto position-relative">
+            <input
+            type="text"
+            id="searchForSiteName"
+            class="form-control  mx-auto "
+            placeholder="Search For Site Name..."
+            oninput="searchForSiteName()"
+          /> 
+          <i class="fa fa-search position-absolute end-0 bottom-0 mb-1 me-2 text-dark fs-4"></i>
+        </div>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Index</th>
+              <th scope="col">Website Name</th>
+              <th scope="col">Visit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableContent"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
